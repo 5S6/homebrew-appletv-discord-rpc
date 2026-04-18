@@ -4,7 +4,7 @@ class AppletvDiscordRpc < Formula
   url "https://github.com/5S6/appletv-discord-rpc/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "4b0a7cf7c6dc3d2dffd41c802f9cc4664687924a0c3463a4a3c661a70992c5f9"
   license "MIT"
-  head "https://github.com/5S6/appletv-discord-rpc.git"
+  head "https://github.com/5S6/appletv-discord-rpc.git", branch: "main"
 
   depends_on "deno"
   depends_on :macos
