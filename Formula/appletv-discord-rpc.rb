@@ -15,6 +15,7 @@ class AppletvDiscordRpc < Formula
 
     (bin/"appletv-discord-rpc").write <<~EOS
       #!/bin/bash
+      export HOMEBREW_MANAGED=1
       exec #{deno} run \
         --allow-env \
         --allow-run \
@@ -37,11 +38,14 @@ class AppletvDiscordRpc < Formula
 
   def caveats
     <<~EOS
-      install the latest source with:
-        brew install --HEAD appletv-discord-rpc
+      to start appletv-discord-rpc and have it run automatically on login:
+        brew services start appletv-discord-rpc
 
-      run it once manually first to set up autostart:
-        appletv-discord-rpc
+      to stop it and remove from login items:
+        brew services stop appletv-discord-rpc
+
+      to install the latest source from git instead of the last release tarball:
+        brew install --HEAD appletv-discord-rpc
     EOS
   end
 end
