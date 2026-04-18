@@ -11,10 +11,11 @@ class AppletvDiscordRpc < Formula
 
   def install
     libexec.install "appletv_discord.ts"
+    deno = Formula["deno"].opt_bin/"deno"
 
     (bin/"appletv-discord-rpc").write <<~EOS
       #!/bin/bash
-      exec deno run \
+      exec #{deno} run \
         --allow-env \
         --allow-run \
         --allow-net \
